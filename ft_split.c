@@ -65,7 +65,6 @@ static void	ft_freematr(char **res, int count)
 char		**ft_split(char const *s, char c)
 {
 	char	**res;
-	int		i;
 	int		count;
 
 	if (!(res = (char **)malloc(sizeof(char *) * (ft_number_chars(s, c) + 1))))
@@ -80,7 +79,7 @@ char		**ft_split(char const *s, char c)
 			ft_freematr(res, count);
 			return (NULL);
 		}
-		i = ft_strlcpy(res[count], s, ft_fchr(s, c) + 1);
+		ft_strlcpy(res[count], s, ft_fchr(s, c) + 1);
 		res[count][ft_fchr(s, c)] = '\0';
 		s += ft_fchr(s, c);
 		count++;
